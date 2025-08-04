@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     background-color: #E8E8E8;
-    background-image: url("/src/assets/bg_fundo_ai_cockipt.svg");
+    background-image: url('/bg_fundo_ai_cockipt.svg');
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
