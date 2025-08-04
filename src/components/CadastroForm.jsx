@@ -1,5 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import IconDark from "../assets/asterisk-icon-dark.svg";
+import ArrowRight from "../assets/arrow-icon-white.svg";
+import GoogleIcon from "../assets/google-icon-color.svg";
+import FacebookIcon from "../assets/assets/facebook-icon-white.svg";
 
 const FormContainer = styled.div`
   display: flex;
@@ -102,21 +106,13 @@ const CadastroForm = () => {
       <FormRow>
         <FormGroup>
           <Label htmlFor="nome">
-            Nome Completo{" "}
-            <Asterisk
-              src="/src/assets/asterisk-icon-dark.svg"
-              alt="Obrigatório"
-            />
+            Nome Completo <Asterisk src={IconDark} alt="Obrigatório" />
           </Label>
           <Input type="text" id="nome" placeholder="Maria Silva" />
         </FormGroup>
         <FormGroup>
           <Label htmlFor="cpf">
-            CPF{" "}
-            <Asterisk
-              src="/src/assets/asterisk-icon-dark.svg"
-              alt="Obrigatório"
-            />
+            CPF <Asterisk src={IconDark} alt="Obrigatório" />
           </Label>
           <Input type="text" id="cpf" placeholder="000.000.000 - 00" />
         </FormGroup>
@@ -124,21 +120,13 @@ const CadastroForm = () => {
       <FormRow>
         <FormGroup>
           <Label htmlFor="email">
-            E-mail{" "}
-            <Asterisk
-              src="/src/assets/asterisk-icon-dark.svg"
-              alt="Obrigatório"
-            />
+            E-mail <Asterisk src={IconDark} alt="Obrigatório" />
           </Label>
           <Input type="email" id="email" placeholder="e-mail@exemplo.com.br" />
         </FormGroup>
         <FormGroup>
           <Label htmlFor="celular">
-            Celular{" "}
-            <Asterisk
-              src="/src/assets/asterisk-icon-dark.svg"
-              alt="Obrigatório"
-            />
+            Celular <Asterisk src={IconDark} alt="Obrigatório" />
           </Label>
           <Input type="text" id="celular" placeholder="55 99 9999 - 9999" />
         </FormGroup>
@@ -146,21 +134,13 @@ const CadastroForm = () => {
       <FormRow>
         <FormGroup>
           <Label htmlFor="razaoSocial">
-            Razão Social{" "}
-            <Asterisk
-              src="/src/assets/asterisk-icon-dark.svg"
-              alt="Obrigatório"
-            />
+            Razão Social <Asterisk src={IconDark} alt="Obrigatório" />
           </Label>
           <Input type="text" id="razaoSocial" placeholder="99999999" />
         </FormGroup>
         <FormGroup>
           <Label htmlFor="cnpj">
-            CNPJ{" "}
-            <Asterisk
-              src="/src/assets/asterisk-icon-dark.svg"
-              alt="Obrigatório"
-            />
+            CNPJ <Asterisk src={IconDark} alt="Obrigatório" />
           </Label>
           <Input type="text" id="cnpj" placeholder="9999.9999.9999" />
         </FormGroup>
@@ -168,38 +148,30 @@ const CadastroForm = () => {
       <FormRow>
         <FormGroup>
           <Label htmlFor="senha">
-            Senha{" "}
-            <Asterisk
-              src="/src/assets/asterisk-icon-dark.svg"
-              alt="Obrigatório"
-            />
+            Senha <Asterisk src={IconDark} alt="Obrigatório" />
           </Label>
           <Input type="password" id="senha" placeholder="123456" />
         </FormGroup>
         <FormGroup>
           <Label htmlFor="confirmarSenha">
-            Confirmar Senha{" "}
-            <Asterisk
-              src="/src/assets/asterisk-icon-dark.svg"
-              alt="Obrigatório"
-            />
+            Confirmar Senha <Asterisk src={IconDark} alt="Obrigatório" />
           </Label>
           <Input type="password" id="confirmarSenha" placeholder="123456" />
         </FormGroup>
       </FormRow>
       <SocialButtonsContainer>
         <SocialButton className="facebook">
-          <img src="/src/assets/facebook-icon-white.svg" alt="Facebook" />
+          <img src={FacebookIcon} alt="Facebook" />
           Continuar com Facebook
         </SocialButton>
         <SocialButton className="google">
-          <img src="/src/assets/google-icon-color.svg" alt="Google" />
+          <img src={GoogleIcon} alt="Google" />
           Continuar com Google
         </SocialButton>
       </SocialButtonsContainer>
 
       <SubmitButton>
-        <img src="/src/assets/arrow-icon-white.svg" alt="Cadastrar" />
+        <img src={ArrowRight} alt="Cadastrar" />
         Cadastrar
       </SubmitButton>
     </FormContainer>
