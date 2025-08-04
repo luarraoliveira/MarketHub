@@ -4,7 +4,8 @@ import Input from "./common/Input.jsx";
 import Button from "./common/Button.jsx";
 import SocialButton from "./common/SocialButton.jsx";
 import CadastroCheckboxForm from "../components/CadastroCheckboxForm";
-
+import { Link, useLocation } from "react-router-dom";
+import ArrowIcon from "../assets/arrow-icon-white.svg";
 const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -63,6 +64,29 @@ const CheckboxLabel = styled.label`
 
 const HiddenCheckbox = styled.input.attrs({ type: "checkbox" })`
   display: none;
+`;
+
+const NavButton = styled(Link)`
+  gap: 8px;
+  padding: 6px 15px 7px 14px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-family: ${({ theme }) => theme.fonts.primary};
+  font-weight: 600;
+  font-size: 14px;
+  color: ${({ theme }) => theme.colors.white};
+  background: ${({ theme }) => theme.gradients.button};
+  width: 100%;
+  max-width: 320px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 18px;
+    height: 18px;
+  }
 `;
 
 const StyledCheckbox = styled.div`
@@ -134,14 +158,10 @@ const LoginForm = () => {
         <SocialButton provider="google">Continuar com Google</SocialButton>
       </SocialLoginContainer>
 
-      <Button>
-        <a
-          href="/cadastro"
-          style={{ textDecoration: "none", color: "#ffffff" }}
-        >
-          Cadastrar
-        </a>
-      </Button>
+      <NavButton to="/cadastro" primary>
+        <img src={ArrowIcon} alt="Home" />
+        <span>Cadastrar</span>
+      </NavButton>
     </FormContainer>
   );
 };

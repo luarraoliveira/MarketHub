@@ -199,8 +199,8 @@ const CadastroForm = () => {
       </SocialButtonsContainer>
 
       <SubmitButton>
-        Cadastrar
         <img src="/src/assets/arrow-icon-white.svg" alt="Cadastrar" />
+        Cadastrar
       </SubmitButton>
     </FormContainer>
   );
