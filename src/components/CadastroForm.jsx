@@ -3,7 +3,7 @@ import styled from "styled-components";
 import IconDark from "../assets/asterisk-icon-dark.svg";
 import ArrowRight from "../assets/arrow-icon-white.svg";
 import GoogleIcon from "../assets/google-icon-color.svg";
-import FacebookIcon from "../assets/assets/facebook-icon-white.svg";
+import FacebookIcon from "../assets/facebook-icon-white.svg";
 
 const FormContainer = styled.div`
   display: flex;
