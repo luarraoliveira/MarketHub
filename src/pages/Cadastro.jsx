@@ -1,29 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import CadastroForm from "../components/CadastroForm";
-import CadastroCheckboxForm from "../components/CadastroCheckboxForm";
+import CompradorForm from "../components/CompradorForm";
+import VendedorForm from "../components/VendedorForm";
+import UserTypeSelector from "../components/common/UserTypeSelector";
 import Breadcrumb from "../components/common/Breadcrumb";
+
+const FormHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 700px;
+  margin-bottom: 24px;
+`;
 
 const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   background-color: #e8e8e8;
-`;
-
-const FormHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 700px;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    gap: 32px;
-  }
 `;
 
 const MainContent = styled.main`
@@ -58,10 +54,11 @@ const Title = styled.h1`
   font-size: 32px;
   font-weight: 700;
   color: #000000;
-  text-align: center;
 `;
 
 const Cadastro = () => {
+  const [userType, setUserType] = useState("comprador");
+
   const breadcrumbItems = [
     { label: "AI.MarketHub", link: "/" },
     { label: "Login", link: "/login" },
@@ -76,9 +73,12 @@ const Cadastro = () => {
         <FormWrapper>
           <FormHeader>
             <Title>Fazer Cadastro</Title>
-            <CadastroCheckboxForm />
+            <UserTypeSelector
+              selectedType={userType}
+              onTypeChange={setUserType}
+            />
           </FormHeader>
-          <CadastroForm />
+          {userType === "comprador" ? <CompradorForm /> : <VendedorForm />}
         </FormWrapper>
       </MainContent>
       <Footer />

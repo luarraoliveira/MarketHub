@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Input from "./common/Input.jsx";
-import Button from "./common/Button.jsx";
 import SocialButton from "./common/SocialButton.jsx";
-import CadastroCheckboxForm from "../components/CadastroCheckboxForm";
-import { Link, useLocation } from "react-router-dom";
+import UserTypeSelector from "./common/UserTypeSelector.jsx";
+import { Link } from "react-router-dom";
 import ArrowIcon from "../assets/arrow-icon-white.svg";
 const FormContainer = styled.div`
   display: flex;
@@ -25,7 +24,6 @@ const FormContainer = styled.div`
 const TitleContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
   width: 100%;
   gap: 0;
   max-width: 700px;
@@ -41,29 +39,6 @@ const Title = styled.h1`
   font-weight: 700;
   font-size: 32px;
   color: ${({ theme }) => theme.colors.primary};
-`;
-
-const ProfileSelector = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 16px 24px;
-  background-color: ${({ theme }) => theme.colors.gray.light};
-  border-radius: 50px;
-`;
-
-const CheckboxLabel = styled.label`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  font-family: ${({ theme }) => theme.fonts.primary};
-  font-size: 14px;
-  color: ${({ theme }) => theme.colors.primary};
-`;
-
-const HiddenCheckbox = styled.input.attrs({ type: "checkbox" })`
-  display: none;
 `;
 
 const NavButton = styled(Link)`
@@ -89,24 +64,6 @@ const NavButton = styled(Link)`
   }
 `;
 
-const StyledCheckbox = styled.div`
-  width: 14px;
-  height: 14px;
-  border: 2px solid ${({ theme }) => theme.colors.gray.dark};
-  border-radius: 2px;
-  background-color: ${({ checked, theme }) =>
-    checked ? theme.colors.accent : theme.colors.white};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  img {
-    display: ${({ checked }) => (checked ? "block" : "none")};
-    width: 9px;
-    height: 8px;
-  }
-`;
-
 const Form = styled.form`
   display: flex;
   flex-direction: column;
@@ -126,13 +83,13 @@ const SocialLoginContainer = styled.div`
 `;
 
 const LoginForm = () => {
-  const [userType, setUserType] = useState("vendedor");
+  const [userType, setUserType] = useState("comprador");
 
   return (
     <FormContainer>
       <TitleContainer>
         <Title>Fazer Login</Title>
-        <CadastroCheckboxForm />
+        <UserTypeSelector selectedType={userType} onTypeChange={setUserType} />
       </TitleContainer>
       <Form>
         <Input
